@@ -32,10 +32,29 @@ TableRow = function(data){
 	return ret;
 }
 
+// Zur Editierfunktion
 edit = function(id){
 
 }
 
+// mitglied-Element mit der id: "id" aus der Datenbank entfernen
 del = function(id){
 
 }
+
+// Hilfsfunktion
+String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
+// Auto-Aktualisierung der Suchleiste
+$("input").keyup(function(){
+	var text = $("input").val();
+	$("td:first-child").each(function(){
+		var item = $(this);
+		var searchString = item.text() +" "+ item.next().text();
+		if(searchString.contains(text) || searchString == ""){
+			item.parent().fadeIn();
+		}else{
+			item.parent().fadeOut();
+		}
+	})
+});
