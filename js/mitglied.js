@@ -1,6 +1,4 @@
-$(document).ready(function(){
-	loadData();
-});
+
 
 
 loadData = function(){
@@ -62,4 +60,8 @@ $("input").keyup(function(){
 			item.parent().fadeOut();
 		}
 	})
+});
+
+$(document).ready(function(){
+	loadData();
 });
