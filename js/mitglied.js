@@ -1,3 +1,8 @@
+$(document).ready(function(){
+	loadData();
+});
+
+
 loadData = function(){
 	$.ajax({
 		url: "php/mitglied.php",
